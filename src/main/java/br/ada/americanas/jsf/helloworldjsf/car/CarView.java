@@ -21,8 +21,9 @@ public class CarView implements Serializable {
         this.service = service;
     }
 
-    public void save() {
+    public String save() {
         this.service.save(car);
+        return "/car/list.xhtml?faces-redirect=true";
     }
 
     public List<Car> list() {
