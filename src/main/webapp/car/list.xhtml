@@ -6,19 +6,35 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:prime="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <div class="card">
-       <prime:dataTable id="list_car" value="#{car_view.list()}" var="car" >
-            <prime:column headerText="Brand">
-                <h:outputText value="#{car.brand}" />
-            </prime:column>
-           <prime:column headerText="Model">
-               <h:outputText value="#{car.model}" />
-           </prime:column>
-           <prime:column headerText="Plate">
-               <h:outputText value="#{car.plate}"/>
-           </prime:column>
-       </prime:dataTable>
-    </div>
-</f:view>
+<h:head>
+</h:head>
+<h:body>
+    <f:view>
+        <h:form id="form">
+            <div class="card">
+                <prime:dataTable id="list_car" value="#{car_view.list()}" var="car">
+                    <prime:column headerText="Brand">
+                        <h:outputText value="#{car.brand}"/>
+                    </prime:column>
+                    <prime:column headerText="Model">
+                        <h:outputText value="#{car.model}"/>
+                    </prime:column>
+                    <prime:column headerText="Plate">
+                        <h:outputText value="#{car.plate}"/>
+                    </prime:column>
+                    <prime:column headerText="Year">
+                        <h:outputText value="#{car.year}"/>
+                    </prime:column>
+                    <prime:column headerText="Edit">
+                        <prime:commandLink value="Edit" action="#{car_view.edit(car)}"/>
+                    </prime:column>
+                    <prime:column headerText="Delete">
+                        <prime:commandLink value="Delete" action="#{car_view.delete(car.id)}"/>
+                    </prime:column>
+                </prime:dataTable>
+            </div>
+        </h:form>
+        <prime:link value="New car" href="register.xhtml" />
+    </f:view>
+</h:body>
 </html>

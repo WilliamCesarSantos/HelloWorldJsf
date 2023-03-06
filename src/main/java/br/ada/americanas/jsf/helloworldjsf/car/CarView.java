@@ -23,6 +23,7 @@ public class CarView implements Serializable {
 
     public String save() {
         this.service.save(car);
+        this.car = new Car();
         return "/car/list.xhtml?faces-redirect=true";
     }
 
@@ -30,13 +31,15 @@ public class CarView implements Serializable {
         return service.list();
     }
 
-    public void edit(Car car) {
+    public String edit(Car car) {
         this.car = car;
+        return "/car/register.xhtml?faces-redirect=true";
     }
 
-    public void delete(Long id) {
+    public String delete(Long id) {
         this.service.delete(id);
         this.car = new Car();
+        return "/car/list.xhtml?faces-redirect=true";
     }
 
     public Car getCar() {

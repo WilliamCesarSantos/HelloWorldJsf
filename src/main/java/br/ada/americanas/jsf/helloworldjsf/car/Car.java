@@ -6,6 +6,7 @@ public class Car {
     private String brand;
     private String model;
     private String plate;
+    private Integer year;
 
     public Long getId() {
         return id;
@@ -37,6 +38,14 @@ public class Car {
 
     public void setPlate(String plate) {
         this.plate = plate;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
 }

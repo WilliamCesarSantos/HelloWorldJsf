@@ -6,32 +6,42 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:prime="http://primefaces.org/ui">
+<h:head>
 
-<f:view>
-    <h:form>
-        <div class="card">
-            <div class="ui-fluid">
-                <div class="field grid">
-                    <prime:outputLabel for="brand" styleClass="col-12 md:col-2" value="Brand" />
-                    <div class="col-12 md:col-10">
-                        <prime:inputText id="brand" value="#{car_view.car.brand}" required="true" /><br />
+</h:head>
+<h:body>
+    <f:view>
+        <h:form>
+            <div class="card">
+                <div class="ui-fluid">
+                    <div class="field grid">
+                        <prime:outputLabel for="brand" styleClass="col-12 md:col-2" value="Brand"/>
+                        <div class="col-12 md:col-10">
+                            <prime:inputText id="brand" value="#{car_view.car.brand}" required="true"/><br/>
+                        </div>
                     </div>
-                </div>
-                <div class="field grid">
-                    <prime:outputLabel for="model" styleClass="col-12 md:col-2" value="Model" />
-                    <div class="col-12 md:col-10">
-                        <prime:inputText id="model" value="#{car_view.car.model}" required="true" />
+                    <div class="field grid">
+                        <prime:outputLabel for="model" styleClass="col-12 md:col-2" value="Model"/>
+                        <div class="col-12 md:col-10">
+                            <prime:inputText id="model" value="#{car_view.car.model}" required="true"/>
+                        </div>
                     </div>
-                </div>
-                <div class="field grid">
-                    <prime:outputLabel for="plate" styleClass="col-12 md:col-2" value="Plate" />
-                    <div class="col-12 md:col-10">
-                        <prime:inputText id="plate" value="#{car_view.car.plate}" required="true" /><br />
+                    <div class="field grid">
+                        <prime:outputLabel for="plate" styleClass="col-12 md:col-2" value="Plate"/>
+                        <div class="col-12 md:col-10">
+                            <prime:inputText id="plate" value="#{car_view.car.plate}" required="true"/><br/>
+                        </div>
                     </div>
+                    <div class="field grid">
+                        <prime:outputLabel for="year" styleClass="col-12 md:col-2" value="Year"/>
+                        <div class="col-12 md:col-10">
+                            <prime:inputText id="year" value="#{car_view.car.year}" required="true"/><br/>
+                        </div>
+                    </div>
+                    <h:commandButton id="submit" value="Save" action="#{car_view.save}"/>
                 </div>
-                <h:commandButton id="submit" value="Save" action="#{car_view.save}" />
             </div>
-        </div>
-    </h:form>
-</f:view>
+        </h:form>
+    </f:view>
+</h:body>
 </html>
